@@ -1,0 +1,45 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="s004">
+
+    <form action="/result" method="POST">
+        <fieldset>
+            <legend>TELL me the TRUTH and get the SALARY!</legend>
+            <div class="inner-form">
+                <div class="input-field">
+
+                    <select name="city">
+                        <option disabled selected value="">City</option>
+                        <option value="Москва">Москва</option>
+                        <option value="Санкт-Петербург">Санкт-Петербург</option>
+
+                    </select>
+
+                    <select name="experience">
+                        <option disabled selected value="">Experience</option>
+                        <option value="noExperience">less 1</option>
+                        <option value="between1And3">1-3</option>
+                        <option value="between1And3">3-6</option>
+                        <option value="moreThan6">more 6</option>
+                    </select>
+
+                    <input class="form-control" name="skills" placeholder="Your skills" type="text"/>
+
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <div class="suggestion-wrap"> {{ prediction }}</div>
+</div>
+
+{% for file in js_files %}
+  <script type="text/javascript" src = {{file}}>  </script>
+{% endfor %}
+</body>
+</html>
