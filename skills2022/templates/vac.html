@@ -1,0 +1,13 @@
+{% for vacancy in vacancies %}
+<div class="px-5">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <span class="badge rounded-pill bg-blue" style="width: 25%;">{{vacancy['emp_name']}}</span>
+            <h3 class="mb-0">{{vacancy['name']}}</h3>
+            <p class="mb-auto">{{vacancy['sal']}}</p>
+            <a href="{{vacancy['alternate_url']}}" target="_blank" class="btn btn-primary" id="guid-link" style="width: 25%;">About</a>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
